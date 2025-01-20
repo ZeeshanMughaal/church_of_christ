@@ -1720,8 +1720,8 @@
   })
 </script>
     <script>
-  $(document).ready(function() {
-    new Splide('#image-slider', {
+document.addEventListener('DOMContentLoaded', function () {
+      new Splide('#image-slider', {
         type   : 'loop',       // Enables looping of slides
         perPage: 4,            // Displays 4 images at a time
         perMove: 1,            // Moves one image at a time
@@ -1732,8 +1732,7 @@
           480 : { perPage: 1 }  // For mobile screens, show 1 image per row
         },
       }).mount();
-
-  })
+    });
 </script>
   </body>
 
