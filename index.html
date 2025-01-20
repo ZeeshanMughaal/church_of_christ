@@ -69,6 +69,16 @@
       .slider-content p {
         margin-bottom: 20px;
       }
+      .owl-carousel .itemofGallery {
+  width: 23%; /* Ensure images fit within the container */
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.owl-carousel .itemofGallery img {
+  width: 100%; /* Make image fill the container */
+  height: 100%; /* Adjust height if necessary */
+}
     </style>
     <script
       type="text/javascript"
@@ -1473,7 +1483,39 @@
         </div>
       </div>
     </section>
-
+ <!--  Demos -->
+    <section id="demos">
+      <div class="row">
+        <div class="large-12 columns">
+          <div class="owl-carousel owl-theme" id="owlCarousel22">
+            <div class="itemofGallery">
+              <img src="images/gallery-1.jpg">
+            </div>
+            <div class="itemofGallery">
+              <img src="images/gallery-2.jpg">
+            </div>
+            <div class="itemofGallery">
+              <img src="images/gallery-3.jpg">
+            </div>
+            <div class="itemofGallery">
+              <img src="images/gallery-4.jpg">
+            </div>
+            <div class="itemofGallery">
+              <img src="images/gallery-1.jpg">
+            </div>
+            <div class="itemofGallery">
+              <img src="images/gallery-2.jpg">
+            </div>
+            <div class="itemofGallery">
+              <img src="images/gallery-3.jpg">
+            </div>
+            <div class="itemofGallery">
+              <img src="images/gallery-4.jpg">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
         <div class="row mb-5">
@@ -1669,7 +1711,25 @@
       });
     </script>
  
-
+<script>
+  $(document).ready(function() {
+    var owl = $("#owlCarousel22");
+    owl.owlCarousel({
+      items: 4,
+      loop: true,
+      margin: 10,
+      autoplay: true,
+      autoplayTimeout: 1000,
+      autoplayHoverPause: true
+    });
+    $('.play').on('click', function() {
+      owl.trigger('play.owl.autoplay', [1000])
+    })
+    $('.stop').on('click', function() {
+      owl.trigger('stop.owl.autoplay')
+    })
+  })
+</script>
   </body>
 
 
