@@ -29,6 +29,13 @@
     <link rel="stylesheet" href="assets/css/flaticon.css" />
     <link rel="stylesheet" href="assets/css/icomoon.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@latest/dist/css/splide.min.css">
+    <style>
+      .splide__slide img {
+        width: 100%;
+        height: auto;
+      }
+    </style>
     <style type="text/css">
       .scrollax-performance,
       .scrollax-performance *,
@@ -1483,39 +1490,19 @@
         </div>
       </div>
     </section>
- <!--  Demos -->
-    <section id="demos">
-      <div class="row">
-        <div class="large-12 columns">
-          <div class="owl-carousel owl-theme" id="owlCarousel22">
-            <div class="itemofGallery">
-              <img src="images/gallery-1.jpg">
-            </div>
-            <div class="itemofGallery">
-              <img src="images/gallery-2.jpg">
-            </div>
-            <div class="itemofGallery">
-              <img src="images/gallery-3.jpg">
-            </div>
-            <div class="itemofGallery">
-              <img src="images/gallery-4.jpg">
-            </div>
-            <div class="itemofGallery">
-              <img src="images/gallery-1.jpg">
-            </div>
-            <div class="itemofGallery">
-              <img src="images/gallery-2.jpg">
-            </div>
-            <div class="itemofGallery">
-              <img src="images/gallery-3.jpg">
-            </div>
-            <div class="itemofGallery">
-              <img src="images/gallery-4.jpg">
-            </div>
-          </div>
-        </div>
+    <div id="image-slider" class="splide">
+      <div class="splide__track">
+        <ul class="splide__list">
+          <li class="splide__slide"><img src="images/gallery-1.jpg" alt="Image 1"></li>
+          <li class="splide__slide"><img src="images/gallery-2.jpg" alt="Image 2"></li>
+          <li class="splide__slide"><img src="images/gallery-3.jpg" alt="Image 3"></li>
+          <li class="splide__slide"><img src="images/gallery-4.jpg" alt="Image 4"></li>
+          <li class="splide__slide"><img src="images/gallery-1.jpg" alt="Image 5"></li>
+          <li class="splide__slide"><img src="images/gallery-2.jpg" alt="Image 6"></li>
+        </ul>
       </div>
-    </section>
+    </div>
+    
     <footer class="ftco-footer ftco-bg-dark ftco-section">
       <div class="container">
         <div class="row mb-5">
@@ -1728,6 +1715,22 @@
     $('.stop').on('click', function() {
       owl.trigger('stop.owl.autoplay')
     })
+  })
+</script>
+    <script>
+  $(document).ready(function() {
+    new Splide('#image-slider', {
+        type   : 'loop',       // Enables looping of slides
+        perPage: 4,            // Displays 4 images at a time
+        perMove: 1,            // Moves one image at a time
+        gap    : '1rem',       // Gap between slides
+        breakpoints: {
+          1024: { perPage: 3 }, // For smaller screens, show 3 images per row
+          768 : { perPage: 2 }, // For tablet-sized screens, show 2 images per row
+          480 : { perPage: 1 }  // For mobile screens, show 1 image per row
+        },
+      }).mount();
+
   })
 </script>
   </body>
